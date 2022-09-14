@@ -3,36 +3,141 @@
     src: url(fonts/KOMIKAX_.ttf);
 }
 
+:root {
+    --bg-primary-color: #121212;
+    --bg-secondary-color: #2a2a2a;
+	--primary-color: #7ff8f2;
+    --primary-color-dark: #44a09b;
+    --secondary-color: #e9b9ff;
+    --secondary-color-dark: #ac62cd;
+}
+
 body {
     margin: auto;
     padding: 0;
     font-family: KOMIKAX_;
     transition: 0.3s;
+    color: white;
+}
+
+.winlosePanel {
+    margin: auto;
+    background-color: var(--bg-secondary-color);
+    width: 90px;
+    height: 176px;
+    position: absolute;
+    top: 30px;
+    left: -88px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #3d3d3d;
+    border-radius: 12px;
+    transition: 0.5s;
+    cursor: default;
+}
+
+.winlosePanel:hover {
+    left: -30px;
+}
+
+.winlosePanel .contents {
+    color: white;
+    opacity: 87%;
+    position: absolute;
+    left: 37px;
+    text-shadow: 2px 2px #141414;
+}
+
+.winlosePanel .contents .winLine {
+    height: 43px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.winLine .win {
+    padding-right: 4px;
+    color: var(--primary-color)
+}
+
+.loseLine .lose {
+    padding-right: 9px;
+    color: var(--secondary-color)
+}
+
+.drawLine .draw {
+    padding-right: 4px;
+    color: #cdcdcd;
+}
+
+.winlosePanel .contents .loseLine {
+    height: 43px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.winlosePanel .contents .drawLine {
+    display: flex;
+}
+
+.winlosePanel .winloseReset {
+    background:  #ff8383  ;
+    font-family: KOMIKAX_;;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    border-width: 1.5px;
+    position: relative;
+    left: -4px;
+    bottom: 7px;
+    cursor: pointer;
+    border-color: #c67474;
+}
+
+.container {
+    background-color: var(--bg-secondary-color);
+    width: 325px;
+    height: 700px;
+    margin: auto;
+    padding: 5px;
+    position: absolute;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #3d3d3d;
+    border-radius: 25px;
+    top: 50px;
+    left: 0;
+    right: 0;
 }
     
 .roundPanel {
     position: absolute;
-    top: 70px;
+    top: 40px;
     left: 0;
     right: 0;
     text-align: center;
     font-size: 10px;
+    opacity: 87%;
+    text-shadow: 3px 3px #141414;
 }
 
 .roundPanel .bloodMoon {
-    color:  #59007a  ;
+    color:  var(--secondary-color)  ;
 }
 
 .energyPanel {
     margin: auto;
     padding: 1px;
     position: absolute;
-    top: 0px;
+    top: -10px;
     left: 0;
     right: 0;
     text-align: center;
     font-size: 55px;
     cursor: default;
+    opacity: 87%;
+    text-shadow: 3px 3px #141414;
 }
 
 .buttonsPanel .used {
@@ -45,6 +150,8 @@ body {
     text-align: center;
     font-size: 13px;
     cursor: default;
+    opacity: 87%;
+    text-shadow: 3px 3px #141414;
 }
 
 .buttonsPanel .used .usedButtons {
@@ -73,11 +180,12 @@ body {
     padding: 2px 18px;
     border-radius: 7px;
     border-width: 3px;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .usedMinus:hover {
-    background: #ff8383;
+    background: var(--secondary-color);
+    border-color: var(--secondary-color-dark)
 }
 
 .usedButtons .usedPlus {
@@ -86,11 +194,12 @@ body {
     padding: 2px 15px;
     border-radius: 7px;
     border-width: 3px;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .usedPlus:hover {
-    background: #8af411 ;
+    background: var(--primary-color) ;
+    border-color: var(--primary-color-dark)
 }
 
 .buttonsPanel .gained {
@@ -103,6 +212,8 @@ body {
     text-align: center;
     font-size: 13px;
     cursor: default;
+    opacity: 87%;
+    text-shadow: 3px 3px #141414;
 }
 
 .buttonsPanel .gained .gainedButtons {
@@ -131,11 +242,12 @@ body {
     padding: 2px 18px;
     border-radius: 7px;
     border-width: 3px;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .gainedMinus:hover {
-    background: #ff8383;
+    background: var(--secondary-color);
+    border-color: var(--secondary-color-dark)
 }
 
 .gainedButtons .gainedPlus {
@@ -144,11 +256,12 @@ body {
     padding: 2px 15px;
     border-radius: 7px;
     border-width: 3px;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .gainedPlus:hover {
-    background: #8af411;
+    background: var(--primary-color);
+    border-color: var(--primary-color-dark)
 }
 
 .buttonsPanel .destroyed {
@@ -161,6 +274,8 @@ body {
     text-align: center;
     font-size: 13px;
     cursor: default;
+    opacity: 87%;
+    text-shadow: 3px 3px #141414;
 }
 
 .buttonsPanel .destroyed .destroyedButtons {
@@ -189,11 +304,12 @@ body {
     padding: 2px 18px;
     border-radius: 7px;
     border-width: 3px;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .destroyedMinus:hover {
-    background: #ff8383;
+    background: var(--secondary-color);
+    border-color: var(--secondary-color-dark)
 }
 
 .destroyedButtons .destroyedPlus {
@@ -202,11 +318,12 @@ body {
     padding: 2px 15px;
     border-radius: 7px;
     border-width: 3px;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .destroyedPlus:hover {
-    background: #8af411;
+    background: var(--primary-color);
+    border-color: var(--primary-color-dark)
 }
 
 .bottomPanel {
@@ -233,7 +350,7 @@ body {
 }
 
 .endTurn:hover {
-    background:#3dc6ba;
+    background:#ffcb5c;
 }
 
 .res {
@@ -250,20 +367,25 @@ body {
     background:  #ff8383  ;
     font-family: KOMIKAX_;;
     font-size: 20px;
+    margin: 0;
     padding: 2px 17px;
     border-radius: 7px;
     border-width: 3px;
     cursor: pointer;
+    border-color: #c67474;
 }
 
 .res .undo {
-    background:   #ffcb5c ;
-    margin: 0px;
-    font-family: KOMIKAX_;;
-    font-size: 20px;
-    padding: 2px 3px;
+    background:   var(--secondary-color) ;
+    margin-top: 0px;
+    padding: 5px 15px;
     border-radius: 7px;
     border-width: 3px;
     cursor: pointer;
     transition: 0.2s;
+    opacity: 87%;
+}
+
+.undo img {
+    width: 25px;
 }

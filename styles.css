@@ -24,10 +24,10 @@ body {
     margin: auto;
     background-color: var(--bg-secondary-color);
     width: 90px;
-    height: 176px;
+    height: 199px;
     position: absolute;
-    top: 30px;
-    left: -88px;
+    top: 37px;
+    left: -87px;
     border-style: solid;
     border-width: 2px;
     border-color: #3d3d3d;
@@ -38,40 +38,61 @@ body {
 
 .winlosePanel:hover {
     left: -30px;
+    border-color: #c993e1;
 }
 
 .winlosePanel .contents {
     color: white;
     opacity: 87%;
     position: absolute;
-    left: 37px;
+    left: 35px;
     text-shadow: 2px 2px #141414;
 }
 
+.winlosePanel .contents .title {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.title .tooltip {
+    padding: 6px;
+    width: 170px;
+    background-color: black;
+    opacity: 93%;
+    border-style: solid;
+    border-color: var(--secondary-color);
+    border-width: 2px;
+    border-radius: 12px;
+    color: white;
+    position: absolute;
+    left: 59px;
+    z-index: 1;
+    font-size: 12px;
+    opacity: 0;
+    transition: opacity 0.1s;
+}
+
+.title .hlght {
+    color: var(--secondary-color)
+}
+
+.title:hover {
+    color:var(--secondary-color);
+}
+
+.title:hover .tooltip {
+    opacity: 1;
+}
+
 .winlosePanel .contents .winLine {
-    height: 43px;
+    height: 40px;
     padding: 0;
     margin: 0;
     display: flex;
 }
 
-.winLine .win {
-    padding-right: 4px;
-    color: var(--primary-color)
-}
-
-.loseLine .lose {
-    padding-right: 9px;
-    color: var(--secondary-color)
-}
-
-.drawLine .draw {
-    padding-right: 4px;
-    color: #cdcdcd;
-}
-
 .winlosePanel .contents .loseLine {
-    height: 43px;
+    height: 40px;
     padding: 0;
     margin: 0;
     display: flex;
@@ -79,6 +100,21 @@ body {
 
 .winlosePanel .contents .drawLine {
     display: flex;
+}
+
+.winLine .win {
+    padding-right: 2px;
+    color: var(--primary-color)
+}
+
+.loseLine .lose {
+    padding-right: 7px;
+    color: var(--secondary-color)
+}
+
+.drawLine .draw {
+    padding-right: 2px;
+    color: #cdcdcd;
 }
 
 .winlosePanel .winloseReset {
@@ -89,12 +125,350 @@ body {
     border-radius: 3px;
     border-width: 1.5px;
     position: relative;
-    left: -4px;
+    left: -2px;
     bottom: 7px;
     cursor: pointer;
     border-color: #c67474;
 }
 
+.slpPanel {
+    background:var(--bg-secondary-color);
+    margin: 0;
+    padding: 5px;
+    width: 60px;
+    height: 65px;
+    position: absolute;
+    top: 300px;
+    left: -67px;
+    align-items: center;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #3d3d3d;
+    border-radius: 12px;
+    transition: 0.5s;
+    cursor: default;
+    text-shadow: 2px 2px #141414;
+}
+
+.slpPanel .slpIcon {
+    position: relative;
+    top: -3px;
+    left: 13px;
+    width: 60%;
+}
+
+.slpPanel .slpCounter {
+    position: relative;
+    top: -18px;
+    left: 14px;
+    opacity: 87%;
+
+}
+
+.slpPanel:hover {
+    left: -30px;
+    border-color: #ffaebc;
+}
+
+.slpCalculatorBg {
+    background: rgba(0, 0, 0, 0.65);
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.2s;
+    z-index: -1;
+}
+
+.slpCalculatorPanel {
+    background-color: var(--bg-secondary-color);
+    width: 220px;
+    height: 285px;
+    margin: auto;
+    padding: 10px;
+    position: absolute;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #3d3d3d;
+    border-radius: 25px;
+    align-items: center;
+    text-align: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.slpCalculatorPanel .calTitle {
+    position: relative;
+    top: -20px;
+    left: 0;
+    right: 0;
+}
+
+.slpCalculatorPanel .slpDisplay {
+    background: #5a5a5a;
+    margin: auto;
+    padding: 5px;
+    width: 180px;
+    height: 30px;
+    position: absolute;
+    font-family: KOMIKAX_;
+    font-size: 22px;
+    text-shadow: 2px 3px #141414;
+    color: rgba(255, 255, 255, 30);
+    top: 40px;
+    left: 0;
+    right: 0;
+    align-items: center;
+    text-align: right;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #3d3d3d;
+    border-radius: 5px;
+    pointer-events:none
+}
+
+.slpCalculatorPanel .buttons .row1 {
+    position: relative;
+    top: 26px;
+    left: 0px;
+}
+
+.slpCalculatorPanel .buttons .seven {
+    background:  #e0e0e0;
+    font-family: KOMIKAX_;
+    font-size: 15px;
+    padding: 5px 13px;
+    border-radius: 7px;
+    border-width: 3px;
+}
+
+.slpCalculatorPanel .buttons .seven:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color-dark)
+}
+
+.slpCalculatorPanel .buttons .eight {
+    background:  #e0e0e0;
+    font-family: KOMIKAX_;
+    font-size: 15px;
+    padding: 5px 13px;
+    border-radius: 7px;
+    border-width: 3px;
+}
+
+.slpCalculatorPanel .buttons .eight:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color-dark)
+}
+
+.slpCalculatorPanel .buttons .nine {
+    background:  #e0e0e0;
+    font-family: KOMIKAX_;
+    font-size: 15px;
+    padding: 5px 13px;
+    border-radius: 7px;
+    border-width: 3px;
+}
+
+.slpCalculatorPanel .buttons .nine:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color-dark)
+}
+
+.slpCalculatorPanel .buttons .clear {
+    background:  #e0e0e0;
+    font-family: KOMIKAX_;
+    font-size: 15px;
+    padding: 5px 11px;
+    border-radius: 7px;
+    border-width: 3px;
+}
+
+.slpCalculatorPanel .buttons .clear:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color-dark)
+}
+
+.slpCalculatorPanel .buttons .row2 {
+    position: relative;
+    top: 36px;
+    left: 0px;
+}
+
+.slpCalculatorPanel .buttons .four {
+    background:  #e0e0e0;
+    font-family: KOMIKAX_;
+    font-size: 15px;
+    padding: 5px 13px;
+    border-radius: 7px;
+    border-width: 3px;
+}
+
+.slpCalculatorPanel .buttons .four:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color-dark)
+}
+
+.slpCalculatorPanel .buttons .five {
+    background:  #e0e0e0;
+    font-family: KOMIKAX_;
+    font-size: 15px;
+    padding: 5px 13px;
+    border-radius: 7px;
+    border-width: 3px;
+
+}
+
+.slpCalculatorPanel .buttons .five:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color-dark)
+}
+
+.slpCalculatorPanel .buttons .six {
+    background:  #e0e0e0;
+    font-family: KOMIKAX_;
+    font-size: 15px;
+    padding: 5px 13px;
+    border-radius: 7px;
+    border-width: 3px;
+}
+
+.slpCalculatorPanel .buttons .six:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color-dark)
+}
+
+.slpCalculatorPanel .buttons .delete {
+    background:  #e0e0e0;
+    font-family: KOMIKAX_;
+    font-size: 15px;
+    padding: 5px 7px;
+    border-radius: 7px;
+    border-width: 3px;
+}
+
+.slpCalculatorPanel .buttons .delete:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color-dark)
+}
+
+.slpCalculatorPanel .buttons .row3 {
+    position: relative;
+    top: 46px;
+    left: 0px;
+}
+.slpCalculatorPanel .buttons .one {
+    background:  #e0e0e0;
+    font-family: KOMIKAX_;
+    font-size: 15px;
+    padding: 5px 15px;
+    border-radius: 7px;
+    border-width: 3px;
+
+}
+
+.slpCalculatorPanel .buttons .one:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color-dark)
+}
+
+.slpCalculatorPanel .buttons .two {
+    background:  #e0e0e0;
+    font-family: KOMIKAX_;
+    font-size: 15px;
+    padding: 5px 13px;
+    border-radius: 7px;
+    border-width: 3px;
+
+}
+
+.slpCalculatorPanel .buttons .two:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color-dark)
+}
+
+.slpCalculatorPanel .buttons .three {
+    background:  #e0e0e0;
+    font-family: KOMIKAX_;
+    font-size: 15px;
+    padding: 5px 13px;
+    border-radius: 7px;
+    border-width: 3px;
+
+}
+
+.slpCalculatorPanel .buttons .three:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color-dark)
+}
+
+.slpCalculatorPanel .buttons .plus {
+    background:  #e0e0e0;
+    font-family: KOMIKAX_;
+    font-size: 15px;
+    padding: 5px 16px;
+    border-radius: 7px;
+    border-width: 3px;
+}
+
+.slpCalculatorPanel .buttons .plus:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color-dark)
+}
+
+.slpCalculatorPanel .buttons .row4 {
+    position: relative;
+    top: 56px;
+    left: 24px;
+}
+
+.slpCalculatorPanel .buttons .zero {
+    background:  #e0e0e0;
+    font-family: KOMIKAX_;
+    font-size: 15px;
+    padding: 5px 12px;
+    border-radius: 7px;
+    border-width: 3px;
+}
+
+.slpCalculatorPanel .buttons .zero:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color-dark)
+}
+
+.slpCalculatorPanel .buttons .close {
+    background:  #ff8383;
+    font-family: KOMIKAX_;
+    font-size: 15px;
+    padding: 5px 5px;
+    border-radius: 7px;
+    border-width: 3px;
+    border-color: #c67474;
+}
+
+.slpCalculatorPanel .buttons .equals {
+    background:  #e0e0e0;
+    font-family: KOMIKAX_;
+    margin-left: 1.5px;
+    font-size: 15px;
+    padding: 5px 16px;
+    background:#ffcb5c;
+    border-color: #c1963a;
+    border-radius: 7px;
+    border-width: 3px;
+}
+
+.bg1 {
+    background-color: blue;
+    width: auto;
+    height: 100%;
+    z-index: -2;
+}
 .container {
     background-color: var(--bg-secondary-color);
     width: 325px;
@@ -109,6 +483,7 @@ body {
     top: 50px;
     left: 0;
     right: 0;
+    z-index: -1;
 }
     
 .roundPanel {
@@ -163,7 +538,7 @@ body {
     right: 0;
     text-align: center;
     font-size: 13px;
-    display: flex;
+    display: inline;
     align-items: center;
     justify-content: center;
 }
@@ -180,6 +555,9 @@ body {
     padding: 2px 18px;
     border-radius: 7px;
     border-width: 3px;
+    position: absolute;
+    top: 18px;
+    left: 82px;
     transition: 0.3s;
 }
 
@@ -194,6 +572,9 @@ body {
     padding: 2px 15px;
     border-radius: 7px;
     border-width: 3px;
+    position: absolute;
+    top: 18px;
+    left: 200px;
     transition: 0.3s;
 }
 
@@ -214,6 +595,7 @@ body {
     cursor: default;
     opacity: 87%;
     text-shadow: 3px 3px #141414;
+    z-index: -1;
 }
 
 .buttonsPanel .gained .gainedButtons {
@@ -225,7 +607,7 @@ body {
     right: 0;
     text-align: center;
     font-size: 13px;
-    display: flex;
+    display: inline;
     align-items: center;
     justify-content: center;
 }
@@ -242,6 +624,9 @@ body {
     padding: 2px 18px;
     border-radius: 7px;
     border-width: 3px;
+    position: absolute;
+    top: 18px;
+    left: 82px;
     transition: 0.3s;
 }
 
@@ -256,6 +641,9 @@ body {
     padding: 2px 15px;
     border-radius: 7px;
     border-width: 3px;
+    position: absolute;
+    top: 18px;
+    left: 200px;
     transition: 0.3s;
 }
 
@@ -276,6 +664,7 @@ body {
     cursor: default;
     opacity: 87%;
     text-shadow: 3px 3px #141414;
+    z-index: -2;
 }
 
 .buttonsPanel .destroyed .destroyedButtons {
@@ -287,7 +676,7 @@ body {
     right: 0;
     text-align: center;
     font-size: 13px;
-    display: flex;
+    display: inline;
     align-items: center;
     justify-content: center;
 }
@@ -304,6 +693,9 @@ body {
     padding: 2px 18px;
     border-radius: 7px;
     border-width: 3px;
+    position: absolute;
+    top: 18px;
+    left: 82px;
     transition: 0.3s;
 }
 
@@ -318,6 +710,9 @@ body {
     padding: 2px 15px;
     border-radius: 7px;
     border-width: 3px;
+    position: absolute;
+    top: 18px;
+    left: 200px;
     transition: 0.3s;
 }
 
@@ -335,6 +730,7 @@ body {
     right: 0;
     text-align: center;
     font-size: 13px;
+    z-index: -3;
 }
 
 .bottomPanel .endTurn {
@@ -351,6 +747,7 @@ body {
 
 .endTurn:hover {
     background:#ffcb5c;
+    border-color: #c1963a;
 }
 
 .res {
@@ -388,4 +785,68 @@ body {
 
 .undo img {
     width: 25px;
+}
+
+.footer {
+    margin: 0;
+    width: 100%;
+    height: 35px;
+    padding: 0;
+    position: absolute;
+    bottom: 0;
+    opacity: 87%;
+    cursor: default;
+}
+
+.footer .content {
+    font-size: 9px;
+    position: relative;
+    align-items: center;
+    text-align: center;
+}
+
+.description {
+    background: var(--bg-secondary-color);
+    margin: auto;
+    padding: 0;
+    width: 100%;
+    height: 100px;
+    position: relative;
+    bottom: 0;
+    display: block;
+    text-align: center;
+    cursor: default;
+}
+
+.description p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color:rgba(255, 255, 255, 0.87)
+}
+
+.description .roninAddress:hover {
+    cursor: pointer;
+    color: rgba(180, 180, 180, 0.87)
+}
+
+.roninAddress .roninToolTip {
+    margin: auto;
+    width: 140px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.1s;
+    pointer-events: none;
+}
+
+.roninAddress:hover .roninToolTip {
+    opacity: 1;
 }

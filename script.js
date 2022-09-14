@@ -3,6 +3,7 @@ window.onload = loadEverything;
 let defaultWins = 0;
 let defaultLose = 0;
 let defaultDraw = 0;
+let defaultSLP = 0;
 let defaultEnergy = 3;
 let defaultRound = 1;
 let defaultUsed = 0;
@@ -18,6 +19,7 @@ var prevRound = 1;
 var currentWins = 0;
 var currentLose = 0;
 var currentDraw = 0;
+var currentSLP = 0;
 
 function loadEverything() {
     document.body.style.backgroundColor = "var(--bg-primary-color)";
@@ -40,9 +42,9 @@ function loadEverything() {
     document.getElementById("undo").disabled = true;
     document.getElementById("undo").style.background ="#8c8c8c";
     document.getElementById("undo").style.borderColor ="#797979";
-    
     document.getElementById("undo").style.cursor = "default";
     document.getElementById("bloodMoon").innerHTML = "";
+    document.getElementById("slpCounter").innerHTML = defaultSLP;
 }
 
 function winPlus() {
@@ -89,6 +91,51 @@ function winloseReset() {
     document.getElementById("winCounter").innerHTML = defaultWins;
     document.getElementById("loseCounter").innerHTML = defaultLose;
     document.getElementById("drawCounter").innerHTML = defaultDraw;
+}
+
+//function that display value
+function dis(val) {
+    document.getElementById("slpDisplay").value+=val;
+
+    let x = document.getElementById("slpDisplay").value;
+    let y = eval(x);
+    document.getElementById("slpCounter").innerHTML = y;
+}
+           
+//function that evaluates the digit and return result
+function solve() {
+    let x = document.getElementById("slpDisplay").value;
+    let y;
+    if (x == 0) {
+        y = eval(null);
+        document.getElementById("slpDisplay").value = y;
+        document.getElementById("slpCounter").innerHTML = 0;
+    }
+    else {
+        y = eval(x);
+        document.getElementById("slpDisplay").value = y;
+        document.getElementById("slpCounter").innerHTML = y;
+    }
+}
+
+//function that clear the display
+function clr() {
+    document.getElementById("slpDisplay").value = "";
+    document.getElementById("slpCounter").innerHTML = defaultSLP;
+}
+
+//function that deletes a number or operator.
+function backSpace() {
+    let x = document.getElementById("slpDisplay").value;
+    x = x.slice(0, -1);
+    document.getElementById("slpDisplay").value = x;
+    if (x > 0) {
+        document.getElementById("slpCounter").innerHTML = x;
+    }
+    else {
+        document.getElementById("slpCounter").innerHTML = defaultSLP;
+    }
+    
 }
 
 function usedPlus() {
@@ -231,4 +278,28 @@ function undo() {
     document.getElementById("undo").style.background ="#8c8c8c";
     document.getElementById("undo").style.borderColor = "#797979";
     document.getElementById("undo").style.cursor = "default"; 
+}
+
+function hideSlpCalculator () {
+    document.getElementById("slpCalculatorBg").style.opacity = 0;
+    document.getElementById("slpCalculatorBg").style.zIndex = -10;
+}
+
+function showSlpCalculator () {
+    document.getElementById("slpCalculatorBg").style.opacity = 1;
+    document.getElementById("slpCalculatorBg").style.zIndex = 999;
+}
+
+function copyRonin() {
+    var copyText = "ronin:932fd9ecc50f5ea4b65028db94a966d3082f7f92";
+    var after = "Copied!";
+     /* Copy the text inside the text field */
+    navigator.clipboard.writeText(copyText);
+    document.getElementById("roninToolTip").innerHTML = after;
+    
+  }
+
+function roninOutFunc() {
+    var tooltip = document.getElementById("roninToolTip");
+    tooltip.innerHTML = "Copy Ronin Address";
 }

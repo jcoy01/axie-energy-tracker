@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Axie Energy Tracker by Jo</title>
+    <title>Axie Energy Tracker</title>
     <script type = 'text/javascript' src='script.js'></script>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icons/images_Cloud_tail_bird.png">
  </head>
 
 <body>
     <div class = winlosePanel onselectstart="return false">
         <div class = "contents">
+            <div class = "title">Arena
+                <span class = "tooltip"><span class = "hlght">TIP:</span> Click the number to increase and 
+                    letter to decrease.</span>
+            </div>
             <div class = "winLine">
                 <p class = "win" onclick = winMinus()>W:&nbsp</p>
                 <p id = "winCounter" onclick = winPlus()></p>
@@ -27,6 +32,51 @@
             <button class = "winloseReset" onclick = winloseReset()>reset</button>
         </div>
     </div>
+
+    <div class = "slpPanel" onclick = showSlpCalculator() onselectstart="return false">
+        <img id = "slpIcon" class = "slpIcon" src = "icons/SLP.webp">
+        <p id = "slpCounter" class = "slpCounter"></p>
+    </div>
+
+    <div id = "slpCalculatorBg" class = "slpCalculatorBg" onselectstart="return false">
+        <div class = "slpCalculatorPanel">
+            <div class = "calTitle">
+                <p id= "Titulo">SLP Tracker</p>
+            </div>
+            <input type="text" id = "slpDisplay" class="slpDisplay" placeholder="0"/>
+
+            <div class = "buttons">
+                <div class = "row1">
+                    <input class = "seven" type="button" value="7" onclick="dis('7')"/>
+                    <input class = "eight" type="button" value="8" onclick="dis('8')"/>
+                    <input class = "nine" type="button" value="9" onclick="dis('9')"/>
+                    <input class = "clear" type="button" value="AC" onclick="clr()"/>
+                </div>
+
+                <div class = "row2">
+                    <input class = "four" type="button" value="4" onclick="dis('4')"/>
+                    <input class = "five" type="button" value="5" onclick="dis('5')"/>
+                    <input class = "six" type="button" value="6" onclick="dis('6')"/>
+                    <input class = "delete" type="button" value="DEL" onclick="backSpace()"/>
+                </div>
+
+                <div class = "row3">
+                    <input class = "one" type="button" value="1" onclick="dis('1')"/>
+                    <input class = "two" type="button" value="2" onclick="dis('2')"/>
+                    <input class = "three" type="button" value="3" onclick="dis('3')"/>
+                    <input class = "plus" type="button" value="+" onclick="dis('+')"/>
+                </div>
+                
+                <div class = "row4">
+                    <input class = "zero" type="button" value="0" onclick="dis('0')"/>
+                    <button class = "close" onclick = hideSlpCalculator()>OFF</button>
+                    <input class = "equals" type="button" value="=" onclick="solve()"/>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
     <div class = 'container' onselectstart="return false">
         <div class = 'roundPanel'>
             <h1>Round <span id = 'roundCounter' class = 'roundCounter'> </span>
@@ -63,7 +113,7 @@
                     <p id = 'destroyedCounter' class = 'destroyedCounter'></p>
                     <button id = 'destroyedPlus' class = 'destroyedPlus' onclick=destroyedPlus()>+</button>
                 </div>
-               
+                
             </div>
             
             <div class = 'bottomPanel'>
@@ -75,7 +125,23 @@
             </div>
         </div>
 
+        <div class = "footer" onselectstart="return false">
+            <div class = "content">
+                <p id = "build">build number: 20211118V2.1</p>
+            </div>
+        </div>
     </div>
     
+
+    <div class = "description" onselectstart="return false">
+        <p>This website is not affiliated with Axie Infinity</p>
+        <p>Created by Jo Christian Apas</p>
+        <p>Is this tool helpful? Please consider donating:</p>
+        <p class = "roninAddress" id = "roninAddress" onclick= copyRonin() onmouseout="roninOutFunc()">
+            ronin:932fd9ecc50f5ea4b65028db94a966d3082f7f92
+            <span id = "roninToolTip" class = "roninToolTip">Copy Ronin Address</span>
+        </p>
+    </div>
+
 </body>
 </html>

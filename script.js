@@ -206,6 +206,7 @@ function destroyedMinus() {
 function endTurn() {
     if (currentRound >= 9) {
         document.getElementById("bloodMoon").innerHTML = " (Blood Moon)";
+        document.getElementById("bg").style.backgroundColor = "#7e4590";
     }
 
     prevRound = currentRound;
@@ -253,11 +254,13 @@ function reset() {
     document.getElementById("undo").style.borderColor = "#797979";
     document.getElementById("undo").style.cursor = "default";
     document.getElementById("bloodMoon").innerHTML = "";
+    document.getElementById("bg").style.backgroundColor = "var(--bg-primary-color)";
 }
 
 function undo() {
     if (currentRound == 10) {
         document.getElementById("bloodMoon").innerHTML = "";
+        document.getElementById("bg").style.backgroundColor = "var(--bg-primary-color)";
     }
 
     currentUsed = defaultUsed;
@@ -276,12 +279,12 @@ function undo() {
     document.getElementById("undo").style.cursor = "default"; 
 }
 
-function hideSlpCalculator () {
+function hideSlpCalculator() {
     document.getElementById("slpCalculatorBg").style.opacity = 0;
     document.getElementById("slpCalculatorBg").style.zIndex = -10;
 }
 
-function showSlpCalculator () {
+function showSlpCalculator() {
     document.getElementById("slpCalculatorBg").style.opacity = 1;
     document.getElementById("slpCalculatorBg").style.zIndex = 999;
 }

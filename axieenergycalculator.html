@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Axie Energy Tracker by Jo</title>
+    <script type = 'text/javascript' src='script.js'></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class = 'roundPanel'>
+        <h1>Round <span id = 'roundCounter' class = 'roundCounter'> </span>
+            <span id = 'bloodMoon' class = 'bloodMoon'></span></h1>
+    </div>
+
+    <div class = 'energyPanel'>
+        <h1 id = 'energyCounter' class = 'energyCounter'></h1>
+    </div>
+
+    <div class = 'buttonsPanel'>
+        <div class = 'used'>
+            <p>Used</p>
+            <div class = 'usedButtons'>
+                <button id = 'usedMinus' class = 'usedMinus' onclick=usedMinus()>-</button>
+                <p id = 'usedCounter' class = 'usedCounter'></p>
+                <button id = 'usedPlus' class = 'usedPlus' onclick=usedPlus()>+</button>
+            </div>
+        </div>
+        
+        <div class = 'gained'>
+            <p>Gained</p>
+            <div class = 'gainedButtons'>
+                <button id = 'gainedMinus' class = 'gainedMinus' onclick=gainedMinus()>-</button>
+                <p id = 'gainedCounter' class = 'gainedCounter'></p>
+                <button id = 'gainedPlus' class = 'gainedPlus' onclick=gainedPlus()>+</button>
+            </div>
+        </div>
+        
+        <div class = 'destroyed'>
+            <p>Destroyed</p>
+            <div class = 'destroyedButtons'>
+                <button id = 'destroyedMinus' class = 'destroyedMinus' onclick=destroyedMinus()>-</button>
+                <p id = 'destroyedCounter' class = 'destroyedCounter'></p>
+                <button id = 'destroyedPlus' class = 'destroyedPlus' onclick=destroyedPlus()>+</button>
+            </div>
+           
+        </div>
+        
+        <div class = 'bottomPanel'>
+            <button id = 'endTurn' class = 'endTurn' onclick = endTurn()>End Turn</button>
+        </div>
+        <div class = 'res'>
+            <button id = 'reset' class = 'reset' onclick = reset()>Reset</button>
+            <button id = 'undo' class = 'undo' onclick = undo()>Undo</button>
+        </div>
+        
+    </div>
+</body>
+</html>

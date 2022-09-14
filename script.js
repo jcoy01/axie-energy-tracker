@@ -22,7 +22,6 @@ var currentDraw = 0;
 var currentSLP = 0;
 
 function loadEverything() {
-    document.body.style.backgroundColor = "var(--bg-primary-color)";
     currentEnergy = defaultEnergy;
     currentRound = defaultRound;
     currentUsed = defaultUsed;
@@ -206,7 +205,6 @@ function destroyedMinus() {
 
 function endTurn() {
     if (currentRound >= 9) {
-        document.body.style.backgroundColor = "var(--secondary-color)";
         document.getElementById("bloodMoon").innerHTML = " (Blood Moon)";
     }
 
@@ -240,7 +238,6 @@ function endTurn() {
 }
 
 function reset() {
-    document.body.style.backgroundColor = "var(--bg-primary-color)";
     currentEnergy = defaultEnergy;
     currentRound = defaultRound;
     currentUsed = defaultUsed;
@@ -260,7 +257,6 @@ function reset() {
 
 function undo() {
     if (currentRound == 10) {
-        document.body.style.backgroundColor = "var(--bg-primary-color)";
         document.getElementById("bloodMoon").innerHTML = "";
     }
 
@@ -296,7 +292,6 @@ function copyRonin() {
      /* Copy the text inside the text field */
     navigator.clipboard.writeText(copyText);
     document.getElementById("roninToolTip").innerHTML = after;
-    
   }
 
 function roninOutFunc() {

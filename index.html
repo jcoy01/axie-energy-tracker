@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Axie Energy Tracker</title>
+    <script type = 'text/javascript' src='script.js'></script>
+    <link href="styles.css" rel="stylesheet" type="text/css" > </link>
+    <link rel="icon" href="icons/images_Cloud_tail_bird.png" > </link>
+ </head>
+
+ <body>
+    <div class = winlosePanel onselectstart="return false">
+        <div class = "contents">
+            <div class = "title">Arena
+                <span class = "tooltip"><span class = "hlght">TIP:</span> Click the number to increase and 
+                    letter to decrease.</span>
+            </div>
+            <div class = "winLine">
+                <p class = "win" onclick = winMinus()>W:&nbsp</p>
+                <p id = "winCounter" onclick = winPlus()></p>
+            </div>
+
+            <div class = "loseLine">
+                <p class = "lose" onclick = loseMinus()>L:&nbsp</p>
+                <p id = "loseCounter" onclick = losePlus()></p>
+            </div>
+
+            <div class = "drawLine">
+                <p class = "draw" onclick = drawMinus()>D:&nbsp</p>
+                <p id = "drawCounter" onclick = drawPlus()></p>
+            </div>
+            
+            <button class = "winloseReset" onclick = winloseReset()>reset</button>
+        </div>
+    </div>
+
+    <div class = "slpPanel" onclick = showSlpCalculator() onselectstart="return false">
+        <img id = "slpIcon" class = "slpIcon" src = "icons/SLP.webp">
+        <p id = "slpCounter" class = "slpCounter"></p>
+    </div>
+
+    <div id = "slpCalculatorBg" class = "slpCalculatorBg" onselectstart="return false">
+        <div class = "slpCalculatorPanel">
+            <div class = "calTitle">
+                <p id= "Titulo">SLP Tracker</p>
+            </div>
+            <input type="text" id = "slpDisplay" class="slpDisplay" placeholder="0"/>
+
+            <div class = "buttons">
+                <div class = "row1">
+                    <input class = "seven" type="button" value="7" onclick="dis('7')"/>
+                    <input class = "eight" type="button" value="8" onclick="dis('8')"/>
+                    <input class = "nine" type="button" value="9" onclick="dis('9')"/>
+                    <input class = "clear" type="button" value="AC" onclick="clr()"/>
+                </div>
+
+                <div class = "row2">
+                    <input class = "four" type="button" value="4" onclick="dis('4')"/>
+                    <input class = "five" type="button" value="5" onclick="dis('5')"/>
+                    <input class = "six" type="button" value="6" onclick="dis('6')"/>
+                    <input class = "delete" type="button" value="DEL" onclick="backSpace()"/>
+                </div>
+
+                <div class = "row3">
+                    <input class = "one" type="button" value="1" onclick="dis('1')"/>
+                    <input class = "two" type="button" value="2" onclick="dis('2')"/>
+                    <input class = "three" type="button" value="3" onclick="dis('3')"/>
+                    <input class = "plus" type="button" value="+" onclick="dis('+')"/>
+                </div>
+                
+                <div class = "row4">
+                    <input class = "zero" type="button" value="0" onclick="dis('0')"/>
+                    <button class = "close" onclick = hideSlpCalculator()>OFF</button>
+                    <input class = "equals" type="button" value="=" onclick="solve()"/>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <div class = "content1" onselectstart="return false">
+        <div class = 'container' onselectstart="return false">
+            <div class = 'roundPanel'>
+                <h1>Round <span id = 'roundCounter' class = 'roundCounter'> </span>
+                    <span id = 'bloodMoon' class = 'bloodMoon'></span></h1>
+            </div>
+        
+            <div class = 'energyPanel'>
+                <h1 id = 'energyCounter' class = 'energyCounter'></h1>
+            </div>
+        
+            <div class = 'buttonsPanel'>
+                <div class = 'used'>
+                    <p>Used</p>
+                    <div class = 'usedButtons'>
+                        <button id = 'usedMinus' class = 'usedMinus' onclick=usedMinus()>-</button>
+                        <p id = 'usedCounter' class = 'usedCounter'></p>
+                        <button id = 'usedPlus' class = 'usedPlus' onclick=usedPlus()>+</button>
+                    </div>
+                </div>
+                
+                <div class = 'gained'>
+                    <p>Gained</p>
+                    <div class = 'gainedButtons'>
+                        <button id = 'gainedMinus' class = 'gainedMinus' onclick=gainedMinus()>-</button>
+                        <p id = 'gainedCounter' class = 'gainedCounter'></p>
+                        <button id = 'gainedPlus' class = 'gainedPlus' onclick=gainedPlus()>+</button>
+                    </div>
+                </div>
+                
+                <div class = 'destroyed'>
+                    <p>Destroyed</p>
+                    <div class = 'destroyedButtons'>
+                        <button id = 'destroyedMinus' class = 'destroyedMinus' onclick=destroyedMinus()>-</button>
+                        <p id = 'destroyedCounter' class = 'destroyedCounter'></p>
+                        <button id = 'destroyedPlus' class = 'destroyedPlus' onclick=destroyedPlus()>+</button>
+                    </div>
+                    
+                </div>
+                
+                <div class = 'bottomPanel'>
+                    <button id = 'endTurn' class = 'endTurn' onclick = endTurn()>End Turn</button>
+                </div>
+                <div class = 'res'>
+                    <button id = 'reset' class = 'reset' onclick = reset()>Reset</button>
+                    <button id = 'undo' class = 'undo' onclick = undo()><img src = "icons/undo.png"></button>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class = "description" onselectstart="return false">
+        <p>This website is not affiliated with Axie Infinity</p>
+        <p>Created by Jo Christian Apas</p>
+        <p>Is this tool helpful? Please consider donating:</p>
+        <p class = "roninAddress" id = "roninAddress" onclick= copyRonin() onmouseout="roninOutFunc()">
+            ronin:932fd9ecc50f5ea4b65028db94a966d3082f7f92
+            <span id = "roninToolTip" class = "roninToolTip">Copy Ronin Address</span>
+        </p>
+    </div>
+ 
+    
+ </body>
